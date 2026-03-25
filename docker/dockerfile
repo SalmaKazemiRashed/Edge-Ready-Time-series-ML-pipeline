@@ -1,0 +1,21 @@
+# Use a small Python image
+FROM python:3.10-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy dependency list first (cached layer)
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
+
+# Copy the full project
+COPY . .
+
+# Expose FastAPI port
+EXPOSE 8000
+
+# Command to run FastAPI
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
