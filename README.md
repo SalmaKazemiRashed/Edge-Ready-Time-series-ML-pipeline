@@ -35,3 +35,13 @@ edge_sensor_pipeline/
 ├── README.md                    # Project overview, instructions
 └── main.py                      # Run full pipeline end-to-end
 ```
+
+
+For running locally:
+```python
+python main.py
+```
+
+The [tflite model](edge_model.tflite) is saved and the results are visualized here [!](static/Figure_1.png)
+
+
