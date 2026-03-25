@@ -1,5 +1,10 @@
 import matplotlib.pyplot as plt
 
+
+# ----------------------------
+# 7. Visualization
+# ----------------------------
+
 def plot_sample_series(X_sample):
     plt.figure(figsize=(10,4))
     for i in range(X_sample.shape[1]):

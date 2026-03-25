@@ -2,7 +2,9 @@ import tensorflow as tf
 import time
 import numpy as np
 
-
+# ----------------------------
+# 6. Edge Deployment (TFLite)
+# ----------------------------
 
 def convert_to_tflite(model, path="edge_model.tflite"):
     tflite_model = tf.lite.TFLiteConverter.from_keras_model(model).convert()
