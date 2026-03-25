@@ -42,6 +42,6 @@ For running locally:
 python main.py
 ```
 
-The [tflite model](edge_model.tflite) is saved and the results are visualized here [!](static/Figure_1.png)
+The [tflite model](edge_model.tflite) is saved and the results are visualized ![](static/Figure_1.png)
 
 
