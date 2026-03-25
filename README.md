@@ -45,3 +45,25 @@ python main.py
 The [tflite model](edge_model.tflite) is saved and the results are visualized ![](static/Figure_1.png)
 
 
+Now, one step further we took and want to make this pipeline production-ready. 
+We make a clean FastAPI + Docker setup that turns the ML pipeline into a hybrid edge-cloud service.
+
+We have defined a FASTAPI Inference Service where we :
+
+* Load trained model (TFLite model)
+* Accept sensor data
+* Return anomaly predictions
+* Simulate edge-cloud interaction
+
+We have started API with 
+```bash
+uvicorn api:app --reload
+```
+
+
+and test the API with the [python code](test_api.py) in a separate terminal of :
+```bash
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{"sensor_data": [[0.1,0.2,0.3],[0.2,0.1,0.4],[0.3,0.2,0.5]]}'
+```
